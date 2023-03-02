@@ -1,50 +1,38 @@
-import ContactForm from '../ContactForm/ContactForm';
-import { Filter } from '../Filter/Filter';
-import { ContactList } from '../Contact/ContactList';
-import css from './App.module.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
-import { fetchContacts } from 'redux/operations';
-import book from '../../img/pngwingcom.png';
+import React, { Suspense } from 'react';
 import { Loader } from 'components/Loader/Loader';
-import { selectContacts, selectLoading } from 'redux/selectors';
+import { Layout } from 'layout/Layout';
+import ContactsPage from 'pages/ContactsPage/ContactsPage';
+import HomePage from 'pages/HomePage/HomePage';
+import LoginPage from 'pages/LoginPage/LoginPage';
+import RegisterPage from 'pages/RegisterPage/RegisterPage';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { Navigate, Route, Routes } from 'react-router-dom';
+import { refreshUser } from 'redux/user/operations';
+
+// const LazyHomePage = lazy(() => import('pages/HomePage/HomePage.jsx'));
+// const LazyRegisterPage = lazy(() => import('pages/RegisterPage/RegisterPage.jsx'));
+// const LazyLoginPage = lazy(() => import('pages/LoginPage/LoginPage.jsx'));
+// const LazyContactsPage = lazy(() => import('pages/ContactsPage/ContactsPage'));
 
 export default function App() {
-  const contacts = useSelector(selectContacts);
-  const loading = useSelector(selectLoading);
   const dispatch = useDispatch();
-
   useEffect(() => {
-    dispatch(fetchContacts());
+    dispatch(refreshUser());
   }, [dispatch]);
-
   return (
-    <div className={css.wrapAll}>
-      <div className={css.header}>
-        <div className={css.nav}>
-          <img className={css.book} src={book} alt="" />
-          <h1 className={css.titleH1}>PhoneBook</h1>
-        </div>
-      </div>
-      <div className={css.container}>
-        <div className={css.wrap}>
-          <div>
-            <ContactForm />
-          </div>
-          <div>
-            <h2 className={css.titleH2}>Contacts</h2>
-            {contacts.length > 0 ? (
-              <div className={css.filterCont}>
-                <Filter />
-                <ContactList />
-              </div>
-            ) : (
-              <p className={css.comment}>No contacts</p>
-            )}
-          </div>
-        </div>
-      </div>
-      {loading && <Loader />}
-    </div>
+    <>
+      <Suspense fallback={<Loader />}>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<HomePage />} />
+            <Route path="register" element={<RegisterPage />} />
+            <Route path="login" element={<LoginPage />} />
+            <Route path="contacts" element={<ContactsPage />} />
+            <Route path="*" element={<Navigate to={'/'} />} />
+          </Route>
+        </Routes>
+      </Suspense>
+    </>
   );
 }
