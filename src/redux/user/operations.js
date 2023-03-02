@@ -11,9 +11,9 @@ const setAuthHeader = token => {
 };
 
 // Utility to remove JWT
-const clearAuthHeader = () => {
-  instance.defaults.headers.common.Authorization = '';
-};
+// const clearAuthHeader = () => {
+//   instance.defaults.headers.common.Authorization = '';
+// };
 
 export const register = createAsyncThunk(
   'user/register',
