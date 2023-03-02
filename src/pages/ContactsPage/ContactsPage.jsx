@@ -1,9 +1,9 @@
 import css from './ContactsPage.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { fetchContacts } from 'redux/operations';
+import { fetchContacts } from 'redux/contacts/operations';
 import { Loader } from 'components/Loader/Loader';
-import { selectContacts, selectLoading } from 'redux/selectors';
+import { selectContacts, selectLoading } from 'redux/contacts/selectors';
 import { Filter } from 'components/Filter/Filter';
 import { ContactList } from 'components/Contact/ContactList';
 import ContactForm from 'components/ContactForm/ContactForm';

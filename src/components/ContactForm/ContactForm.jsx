@@ -2,8 +2,8 @@ import { useState } from 'react';
 import css from './ContactForm.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { selectContacts } from 'redux/selectors';
-import { addContact } from 'redux/operations';
+import { selectContacts } from 'redux/contacts/selectors';
+import { addContact } from 'redux/contacts/operations';
 
 export default function ContactForm() {
   const [name, setName] = useState('');
@@ -38,10 +38,11 @@ export default function ContactForm() {
   };
   return (
     <form className={css.form} onSubmit={handleSubmit}>
-      <label>
+      <label className={css.label}>
         <p className={css.title}>Name</p>
         <input
-          className={css.nameInput}
+          className={css.input}
+          placeholder="Tim Dalton"
           type="text"
           name="name"
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -54,7 +55,8 @@ export default function ContactForm() {
       <label>
         <p className={css.title}>Number</p>
         <input
-          className={css.numberInput}
+          className={css.input}
+          placeholder="123-1234-4567"
           type="tel"
           name="number"
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"

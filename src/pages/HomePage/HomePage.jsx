@@ -1,6 +1,9 @@
+import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { selectIsLoggedIn } from '../../redux/user/selectors';
 
 export default function HomePage() {
+  const isLogin = useSelector(selectIsLoggedIn);
   return (
     <section>
       <div>
@@ -12,12 +15,20 @@ export default function HomePage() {
           excepturi incidunt vel distinctio.
         </p>
         <div style={{ display: 'flex', gap: 10 }}>
-          <button type="button">
-            <NavLink to={'/login'}>LOGIN</NavLink>
-          </button>
-          <button type="button">
-            <NavLink to={'/register'}>REGISTER</NavLink>
-          </button>
+          {isLogin ? (
+            <button type="button">
+              <NavLink to={'/contacts'}>CONTACTS</NavLink>
+            </button>
+          ) : (
+            <>
+              <button type="button">
+                <NavLink to={'/login'}>LOGIN</NavLink>
+              </button>
+              <button type="button">
+                <NavLink to={'/register'}>REGISTER</NavLink>
+              </button>
+            </>
+          )}
         </div>
       </div>
     </section>

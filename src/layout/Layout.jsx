@@ -1,8 +1,12 @@
 import { NavLink, Outlet } from 'react-router-dom';
 import css from './Layout.module.css';
 import book from 'img/pngwingcom.png';
+import { useAuth } from 'hooks/useAuth';
+import UserMenu from 'components/UserMenu/UserMenu';
+import AuthNav from 'components/AuthNav/AuthNav';
 // style={{ display: 'flex', gap: 10 }}
 export const Layout = () => {
+  const { isLoggedIn } = useAuth();
   return (
     <div className={css.wrapAll}>
       <header className={css.header}>
@@ -10,26 +14,10 @@ export const Layout = () => {
           <nav style={{ display: 'flex', gap: 10 }}>
             <img className={css.book} src={book} alt="" />
             <h1 className={css.titleH1}>PhoneBook</h1>
-            <ul style={{ display: 'flex', gap: 10 }}>
-              <li>
-                <NavLink to={'/'}>HOME</NavLink>
-              </li>
-              <li>
-                <NavLink to={'/login'}>LOGIN</NavLink>
-              </li>
-              <li>
-                <NavLink to={'/register'}>REGISTER</NavLink>
-              </li>
-              <li>
-                <NavLink to={'/contacts'}>CONTACTS</NavLink>
-              </li>
-            </ul>
+            <NavLink to={'/'}>HOME</NavLink>
+            {isLoggedIn ? <AuthNav /> : <UserMenu />}
           </nav>
-          <div>
-            USER MENU <button type="button">LOG OUT</button>
-          </div>
         </div>
-        <></>
       </header>
       <main className={css.container}>
         <Outlet />

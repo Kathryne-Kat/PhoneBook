@@ -1,31 +1,40 @@
 .form {
   margin: 0 auto;
   margin-top: 20px;
-  width: 300px;
-  border: 1px solid #000;
+  width: 350px;
+  border: 1px solid rgb(17, 114, 61);
   border-radius: 5px;
   padding: 0 0 10px 10px;
 }
+.label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
 
 p.title {
+  color: rgb(14, 90, 48);
   font-size: 16px;
   font-weight: 500;
+  margin-left: 20px;
   margin-bottom: 5px;
   margin-top: 20px;
 }
 .btn {
   display: block;
+  margin: 0 auto;
   border-radius: 5px;
   border: none;
 
-  width: 100px;
-  height: 30px;
+  height: 34px;
+  width: 306px;
   background-color: rgb(8, 94, 47);
 
   color: #ffffff;
   text-transform: uppercase;
-  font-size: 11px;
-  font-weight: 500;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 30px;
 }
 
 .btn:hover,
@@ -33,23 +42,16 @@ p.title {
   background-color: #0c803c;
   cursor: pointer;
 }
-.numberInput {
-  margin-bottom: 20px;
-  height: 20px;
-  border: 1px solid #000000;
-  border-radius: 5px;
-}
-.nameInput {
+.input {
   display: block;
-  height: 20px;
-  border: 1px solid #000000;
+  margin: 0 auto;
+  height: 30px;
+  width: 300px;
+  border: 1px solid rgb(17, 114, 61);
   border-radius: 5px;
 }
-.numberInput:hover,
-.numberInput:focus {
-  border: 1px solid #0c803c;
-}
-.nameInput:hover,
-.nameInput:focus {
+
+.input:hover,
+.input:focus {
   border: 1px solid #0c803c;
 }

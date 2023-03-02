@@ -16,30 +16,29 @@ export const RegisterForm = () => {
     };
     dispatch(register(user));
     e.target.reset();
-    // const form = e.currentTarget;
-    // dispatch(
-    //   register({
-    //     name: form.elements.name.value,
-    //     email: form.elements.email.value,
-    //     password: form.elements.password.value,
-    //   })
-    // );
-    // form.reset();
   };
 
   return (
     <form className={css.form} onSubmit={handleSubmit} autoComplete="off">
       <label className={css.label}>
-        Username
-        <input type="text" name="name" minLength={2} maxLength={30} required />
-      </label>
-      <label className={css.label}>
-        Email
-        <input type="email" name="email" required />
-      </label>
-      <label className={css.label}>
-        Password
+        <p className={css.title}> Username</p>
         <input
+          className={css.input}
+          type="text"
+          name="name"
+          minLength={2}
+          maxLength={30}
+          required
+        />
+      </label>
+      <label className={css.label}>
+        <p className={css.title}>Email</p>
+        <input className={css.input} type="email" name="email" required />
+      </label>
+      <label className={css.label}>
+        <p className={css.title}>Password</p>
+        <input
+          className={css.input}
           type="password"
           name="password"
           minLength={7}
@@ -47,7 +46,9 @@ export const RegisterForm = () => {
           required
         />
       </label>
-      <button type="submit">Register</button>
+      <button className={css.btn} type="submit">
+        Register
+      </button>
     </form>
   );
 };
