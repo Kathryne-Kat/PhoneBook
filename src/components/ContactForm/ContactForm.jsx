@@ -31,11 +31,14 @@ export default function ContactForm() {
   const handleSubmit = e => {
     if (contacts.some(con => con.name.toLowerCase() === name.toLowerCase())) {
       Notiflix.Notify.warning(`${name} is already in contacts`);
-      // alert(`${name} is already in contacts`);
+      //alert(`${name} is already in contacts`);
+      setName('');
+      setNumber('');
+      e.preventDefault();
       return;
     }
     e.preventDefault();
-    console.log({ name, number });
+    // console.log({ name, number });
     dispatch(addContact({ name, number }));
 
     setName('');
@@ -61,7 +64,7 @@ export default function ContactForm() {
         <p className={css.title}>Number</p>
         <input
           className={css.input}
-          placeholder="123-1234-4567"
+          placeholder="+380951234567"
           type="tel"
           name="number"
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"

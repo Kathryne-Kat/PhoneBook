@@ -1,5 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import Notiflix from 'notiflix';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const instance = axios.create({
   baseURL: 'https://connections-api.herokuapp.com',
@@ -22,7 +24,10 @@ export const register = createAsyncThunk(
       setAuthHeader(res.data.token);
       return res.data;
     } catch (error) {
-      return thunkApi.rejectWithValue(error.message);
+      return thunkApi.rejectWithValue(
+        error.message,
+        Notiflix.Notify.failure('This email already exists')
+      );
     }
   }
 );
@@ -36,7 +41,10 @@ export const logIn = createAsyncThunk(
       setAuthHeader(res.data.token);
       return res.data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+      return thunkAPI.rejectWithValue(
+        error.message,
+        Notiflix.Notify.warning('Something went wrong!')
+      );
     }
   }
 );
@@ -47,7 +55,10 @@ export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
     // After a successful logout, remove the token from the HTTP header
     clearAuthHeader();
   } catch (error) {
-    return thunkAPI.rejectWithValue(error.message);
+    return thunkAPI.rejectWithValue(
+      error.message,
+      Notiflix.Notify.warning('Something went wrong!')
+    );
   }
 });
 
@@ -69,7 +80,10 @@ export const refreshUser = createAsyncThunk(
       const res = await instance.get('/users/current');
       return res.data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+      return thunkAPI.rejectWithValue(
+        error.message,
+        Notiflix.Notify.warning('Something went wrong!')
+      );
     }
   }
 );

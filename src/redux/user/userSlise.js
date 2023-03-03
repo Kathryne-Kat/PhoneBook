@@ -13,6 +13,7 @@ const userSlice = createSlice({
   initialState,
   extraReducers: builder =>
     builder
+
       .addCase(register.fulfilled, (state, { payload }) => {
         state.user = payload.user;
         state.token = payload.token;
@@ -41,5 +42,4 @@ const userSlice = createSlice({
       }),
 });
 
-// export const { handleFilterSlice } = contactsSlice.actions;
 export const userReducer = userSlice.reducer;
