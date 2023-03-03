@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import css from './ContactForm.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { ToastContainer, toast } from 'react-toastify';
+import Notiflix from 'notiflix';
 import 'react-toastify/dist/ReactToastify.css';
 
 import { selectContacts } from 'redux/contacts/selectors';
@@ -30,8 +30,7 @@ export default function ContactForm() {
 
   const handleSubmit = e => {
     if (contacts.some(con => con.name.toLowerCase() === name.toLowerCase())) {
-      const notify = () => toast(`${name} is already in contacts`);
-      <ToastContainer />;
+      Notiflix.Notify.warning(`${name} is already in contacts`);
       // alert(`${name} is already in contacts`);
       return;
     }
