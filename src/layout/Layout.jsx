@@ -10,12 +10,18 @@ export const Layout = () => {
   return (
     <div className={css.wrapAll}>
       <header className={css.header}>
-        <div className={css.nav}>
-          <nav style={{ display: 'flex', gap: 10 }}>
-            <img className={css.book} src={book} alt="" />
-            <h1 className={css.titleH1}>PhoneBook</h1>
-            <NavLink to={'/'}>HOME</NavLink>
-            {isLoggedIn ? <AuthNav /> : <UserMenu />}
+        <div className={css.container}>
+          <nav className={css.navFlex}>
+            <div style={{ display: 'flex', gap: 10 }}>
+              <img className={css.book} src={book} alt="" />
+              <h1 className={css.titleH1}>PhoneBook</h1>
+            </div>
+            <div className={css.navAll}>
+              <NavLink className={css.titleMenu} to={'/'}>
+                HOME
+              </NavLink>
+              {isLoggedIn ? <AuthNav /> : <UserMenu />}
+            </div>
           </nav>
         </div>
       </header>

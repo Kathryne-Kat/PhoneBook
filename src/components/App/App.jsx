@@ -52,9 +52,6 @@ export default function App() {
                 <PrivateRoute redirectTo="login" component={<ContactsPage />} />
               }
             />
-            {/* <Route path="register" element={<RegisterPage />} />
-            <Route path="login" element={<LoginPage />} />
-            <Route path="contacts" element={<ContactsPage />} /> */}
             <Route path="*" element={<Navigate to={'/'} />} />
           </Route>
         </Routes>

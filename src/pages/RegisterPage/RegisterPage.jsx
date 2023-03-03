@@ -5,7 +5,15 @@ export default function RegisterPage() {
     <>
       <section>
         <div>
-          <h1>Register Form</h1>
+          <h1
+            style={{
+              marginTop: '30px',
+              textAlign: 'center',
+              color: 'rgb(8, 94, 47',
+            }}
+          >
+            Register Form
+          </h1>
           <RegisterForm />
         </div>
       </section>

@@ -1,14 +1,19 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import css from './UserMenu.module.css';
 
 function UserMenu() {
   return (
     <ul style={{ display: 'flex', gap: 10 }}>
-      <li>
-        <NavLink to={'/login'}>LOGIN</NavLink>
+      <li className={css.link}>
+        <NavLink className={css.titleMenu} to={'/login'}>
+          LOGIN
+        </NavLink>
       </li>
       <li>
-        <NavLink to={'/register'}>REGISTER</NavLink>
+        <NavLink className={css.titleMenu} to={'/register'}>
+          REGISTER
+        </NavLink>
       </li>
     </ul>
   );

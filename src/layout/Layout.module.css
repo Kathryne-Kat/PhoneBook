@@ -29,7 +29,18 @@
   display: flex;
   height: 80px;
 }
+.navFlex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navAll {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .book {
+  display: inline;
   padding-top: 5px;
   width: 60px;
   height: 65px;
@@ -64,4 +75,9 @@
   padding-left: 10px;
   padding-top: 15px;
   padding-bottom: 10px;
+}
+.titleMenu {
+  color: rgb(12, 100, 71);
+  text-decoration: none;
+  font-weight: 500;
 }

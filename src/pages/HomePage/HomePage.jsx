@@ -1,31 +1,50 @@
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { selectIsLoggedIn } from '../../redux/user/selectors';
+import css from './HomePage.module.css';
 
 export default function HomePage() {
   const isLogin = useSelector(selectIsLoggedIn);
   return (
     <section>
-      <div>
-        <h1>PhoneBook</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis
-          quasi ipsam nobis impedit consequuntur maxime ad officiis incidunt
-          doloribus necessitatibus? Illum at ducimus porro facilis delectus
-          excepturi incidunt vel distinctio.
+      <div style={{ display: 'block', margin: '0 auto' }}>
+        <h1
+          style={{
+            textAlign: 'center',
+            marginTop: '50px',
+            color: 'rgb(8, 94, 47',
+          }}
+        >
+          PhoneBook
+        </h1>
+        <p
+          style={{
+            textAlign: 'center',
+            marginTop: '10px',
+            fontSize: '16px',
+          }}
+        >
+          {' '}
+          Hi! Welcome, to PhoneBook!
         </p>
-        <div style={{ display: 'flex', gap: 10 }}>
+        <div style={{ display: 'flex', gap: 10, justifyContent: 'center' }}>
           {isLogin ? (
-            <button type="button">
-              <NavLink to={'/contacts'}>CONTACTS</NavLink>
+            <button className={css.btn} type="button">
+              <NavLink className={css.btnLink} to={'/contacts'}>
+                CONTACTS
+              </NavLink>
             </button>
           ) : (
             <>
-              <button type="button">
-                <NavLink to={'/login'}>LOGIN</NavLink>
+              <button className={css.btn} type="button">
+                <NavLink className={css.btnLink} to={'/login'}>
+                  LOGIN
+                </NavLink>
               </button>
-              <button type="button">
-                <NavLink to={'/register'}>REGISTER</NavLink>
+              <button className={css.btn} type="button">
+                <NavLink className={css.btnLink} to={'/register'}>
+                  REGISTER
+                </NavLink>
               </button>
             </>
           )}

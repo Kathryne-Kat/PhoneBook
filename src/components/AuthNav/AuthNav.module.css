@@ -1,0 +1,46 @@
+.container {
+  max-width: 1200px;
+  height: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.authNav {
+  /* max-width: 840px; */
+  display: flex;
+  gap: 10;
+  align-items: center;
+  justify-content: flex-end;
+}
+.link {
+  margin-right: 20px;
+  color: rgb(12, 100, 71);
+  /* margin-left: 20px; */
+}
+
+/* .linkLogOut {
+ 
+} */
+.titleMenu {
+  color: rgb(12, 100, 71);
+  text-decoration: none;
+  font-weight: 500;
+}
+.btn {
+  border-radius: 5px;
+  border: none;
+
+  height: 30px;
+  width: 80px;
+  background-color: rgb(8, 94, 47);
+
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  margin-left: 10px;
+}
+.name {
+  color: rgb(8, 94, 47);
+  font-size: 18px;
+  font-style: italic;
+}

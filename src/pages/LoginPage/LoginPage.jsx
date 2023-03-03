@@ -5,7 +5,15 @@ export default function LoginPage() {
     <>
       <section>
         <div>
-          <h1>LogIn</h1>
+          <h1
+            style={{
+              marginTop: '30px',
+              textAlign: 'center',
+              color: 'rgb(8, 94, 47',
+            }}
+          >
+            Log in
+          </h1>
           <LoginForm />
         </div>
       </section>
