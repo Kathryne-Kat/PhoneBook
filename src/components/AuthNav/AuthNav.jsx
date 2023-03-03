@@ -20,7 +20,7 @@ function AuthNav() {
           </NavLink>
         </li>
         <li className={css.linkLogOut}>
-          <span className={css.name}>Hello, {user.name}!</span>
+          <span className={css.name}>Hi, {user.name}!</span>
           <button className={css.btn} type="button" onClick={handleLogout}>
             LOG OUT
           </button>
