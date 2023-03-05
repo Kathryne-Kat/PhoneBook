@@ -23,7 +23,7 @@ export default function HomePage() {
             }}
           >
             {' '}
-            Welcome, to PhoneBook!
+            Welcome to PhoneBook!
           </p>
 
           <div style={{ display: 'flex', gap: 10, justifyContent: 'center' }}>
