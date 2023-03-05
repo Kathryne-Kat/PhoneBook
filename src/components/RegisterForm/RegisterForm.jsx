@@ -24,6 +24,7 @@ export const RegisterForm = () => {
         <p className={css.title}> Username</p>
         <input
           className={css.input}
+          placeholder="Tim Dalton"
           type="text"
           name="name"
           minLength={2}
@@ -33,12 +34,19 @@ export const RegisterForm = () => {
       </label>
       <label className={css.label}>
         <p className={css.title}>Email</p>
-        <input className={css.input} type="email" name="email" required />
+        <input
+          className={css.input}
+          placeholder="mail_name@mail.com"
+          type="email"
+          name="email"
+          required
+        />
       </label>
       <label className={css.label}>
         <p className={css.title}>Password</p>
         <input
           className={css.input}
+          placeholder="min length 7 symbol"
           type="password"
           name="password"
           minLength={7}

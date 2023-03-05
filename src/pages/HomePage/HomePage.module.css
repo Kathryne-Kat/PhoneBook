@@ -16,3 +16,17 @@
   text-transform: uppercase;
   text-decoration: none;
 }
+.container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 42px;
+  text-align: center;
+  margin-top: 20px;
+  color: rgb(8, 94, 47);
+  text-shadow: 2px 2px 4px #a8a8a8;
+}

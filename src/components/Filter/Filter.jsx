@@ -16,7 +16,7 @@ export const Filter = () => {
       <label className={css.filter}>
         <p className={css.title}>Find contacts by name</p>
         <input
-          className={css.inputFilter}
+          className={css.input}
           type="text"
           name="filter"
           value={filter}

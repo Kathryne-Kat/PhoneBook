@@ -22,12 +22,19 @@ export const LoginForm = () => {
     <form className={css.form} onSubmit={handleSubmit} autoComplete="off">
       <label className={css.label}>
         <p className={css.title}>Email </p>
-        <input className={css.input} type="email" name="email" required />
+        <input
+          className={css.input}
+          placeholder="mail_name@mail.com"
+          type="email"
+          name="email"
+          required
+        />
       </label>
       <label className={css.label}>
         <p className={css.title}>Password</p>
         <input
           className={css.input}
+          placeholder="any"
           type="password"
           name="password"
           minLength={7}
