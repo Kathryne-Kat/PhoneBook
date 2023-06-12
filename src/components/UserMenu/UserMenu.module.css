@@ -8,7 +8,12 @@
   font-weight: 500;
   /* border-bottom: 2px solid transparent; */
 }
-
+/* @media screen and (max-width: 768px) {
+  .titleMenu{
+    display: flex;
+    flex-direction: column;
+  }
+} */
 .titleMenu:hover {
   border-bottom: 3px solid #047c4a;
 }

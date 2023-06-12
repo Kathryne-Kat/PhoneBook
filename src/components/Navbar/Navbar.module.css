@@ -35,6 +35,12 @@
   width: 60px;
   height: 65px;
 }
+@media screen and (max-width: 768px) {
+  .book {
+    width: 40px;
+    height: 45px;
+  }
+}
 .container {
   max-width: 1200px;
   height: 100%;
@@ -66,13 +72,27 @@
   padding-top: 15px;
   padding-bottom: 10px;
 }
+@media screen and (max-width: 768px) {
+  .titleH1 {
+    font-size: 25px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .titleH1 {
+    display: none;
+  }
+}
 .titleMenu {
   color: rgb(12, 100, 71);
   text-decoration: none;
   font-weight: 500;
   /* border-bottom: 2px solid transparent; */
 }
-
+@media screen and (max-width: 768px) {
+  .titleMenu{
+    font-size: 14px;
+  }
+}
 .titleMenu:hover {
   border-bottom: 3px solid #047c4a;
 }

@@ -1,10 +1,16 @@
 .form {
   margin: 0 auto;
   margin-top: 20px;
+  margin-left: 20px;
   width: 350px;
   border: 1px solid rgb(17, 114, 61);
   border-radius: 5px;
   padding: 0 0 10px 10px;
+}
+@media screen and (max-width: 480px) {
+  .form {
+    width: 275px;
+  }
 }
 .label {
   display: flex;
@@ -36,7 +42,11 @@ p.title {
   font-weight: 600;
   margin-top: 30px;
 }
-
+@media screen and (max-width: 480px) {
+  .btn {
+    width: 250px;
+  }
+}
 .btn:hover,
 .btn:focus {
   background-color: #0c803c;
@@ -50,7 +60,11 @@ p.title {
   border: 1px solid rgb(17, 114, 61);
   border-radius: 5px;
 }
-
+@media screen and (max-width: 480px) {
+  .input {
+    width: 250px;
+  }
+}
 .input:hover,
 .input:focus {
   border: 1px solid #0c803c;

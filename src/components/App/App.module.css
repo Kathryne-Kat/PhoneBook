@@ -2,12 +2,13 @@
   width: 100vw;
   height: 100vw;
   /* background-color: #18a09949; */
-  background-image: url('../../img/pngwingcom2_1.png');
+  /* background-image: url('../../img/pngwingcom2_1.png'); */
   background-repeat: no-repeat;
   background-size: cover;
 
   /* background-size: 100%; */
 }
+
 .header {
   background: rgb(22, 152, 144);
   background: linear-gradient(

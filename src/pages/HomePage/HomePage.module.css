@@ -22,11 +22,34 @@
   justify-content: center;
   align-items: center;
 }
-
+@media screen and (max-width: 450px) {
+  .container{
+   flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
 .title {
   font-size: 42px;
   text-align: center;
   margin-top: 20px;
   color: rgb(8, 94, 47);
   text-shadow: 2px 2px 4px #a8a8a8;
+}
+@media screen and (max-width: 768px) {
+  .title{
+    font-size: 30px;
+  }
+}
+
+.imgHome{
+  display: block;
+  max-width: 300px; 
+  margin-block: 50px;
+} 
+@media screen and (max-width: 768px) {
+  .imgHome{
+    max-width: 200px; 
+    margin-bottom: 10px;
+  }
 }

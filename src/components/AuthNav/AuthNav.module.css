@@ -11,6 +11,11 @@
   align-items: center;
   justify-content: flex-end;
 }
+@media screen and (max-width: 768px) {
+  .authNav{
+    font-size: 14px;
+  }
+}
 .link {
   margin-right: 20px;
   color: rgb(12, 100, 71);
@@ -26,7 +31,12 @@
   font-weight: 500;
   /* border-bottom: 2px solid transparent; */
 }
-
+@media screen and (max-width: 768px) {
+  .titleMenu{
+    display: flex;
+    flex-direction: column;
+  }
+}
 .titleMenu:hover {
   border-bottom: 3px solid #047c4a;
 }
@@ -51,4 +61,15 @@
   color: rgb(8, 94, 47);
   font-size: 18px;
   font-style: italic;
+}
+
+@media screen and (max-width: 768px) {
+  .name{
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 530px) {
+  .name {
+    display: none;
+  }
 }

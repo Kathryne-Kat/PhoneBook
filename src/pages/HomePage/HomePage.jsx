@@ -11,7 +11,8 @@ export default function HomePage() {
         <img
           src={titleImg}
           alt=""
-          style={{ display: 'block', maxWidth: '300px', marginBlock: '50px' }}
+          className={css.imgHome}
+          // style={{ display: 'block', maxWidth: '300px', marginBlock: '50px' }}
         />
         <div>
           <h1 className={css.title}>PhoneBook</h1>

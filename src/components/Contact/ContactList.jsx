@@ -13,15 +13,15 @@ export const ContactList = () => {
         return (
           <li className={css.listItem} key={contact.id}>
             <div>
-              <span className={css.name}> {contact.name}</span>:{' '}
-              {contact.number}
+              <p className={css.name}> {contact.name}</p>
+              <p>{contact.number}</p>
             </div>
             <button
               className={css.listDel}
               onClick={() => dispatch(deleteContact(contact.id))}
               type="button"
             >
-              Delete
+              x
             </button>
           </li>
         );
